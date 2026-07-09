@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-//处理常规密码生成
+// 处理常规密码生成
 func AddCommonPass(file *os.File) bool {
 
 	res := FileLoad(common_passFile, 1024)
@@ -21,10 +21,10 @@ func AddCommonPass(file *os.File) bool {
 	return false
 }
 
-//处理定制化密码生成
+// 处理定制化密码生成
 func AddRulePass(file *os.File, key string) bool {
 
-	var rules = []string{"key+special_letter+year", "key+special_letter+keyboard_walk", "key+keyboard_walk", "key+special_letter+common_pass", "common_pass+special_letter+key","key+common_pass", "key+special_letter+china_name", "china_name+special_letter+key", "key+special_letter+common_number", "key+common_number+special_letter"}
+	var rules = []string{"key+special_letter+year", "key+special_letter+keyboard_walk", "key+keyboard_walk", "key+special_letter+common_pass", "common_pass+special_letter+key", "key+common_pass", "key+special_letter+china_name", "china_name+special_letter+key", "key+special_letter+common_number", "key+common_number+special_letter"}
 
 	for count, value := range rules {
 		gologger.Infof(" 增加第%d种可能：%s\n", count+1, value)
@@ -46,7 +46,7 @@ func AddRulePass(file *os.File, key string) bool {
 	return true
 }
 
-//通过解析规则，生成密码
+// 通过解析规则，生成密码
 func RuleGotPass(key string, rule []string) []string {
 	var Rule_list = []string{}      // 返回的总切片
 	var tmp_pass_list = []string{}  //存放逐一rule读取的切片
@@ -91,7 +91,7 @@ func RuleGotPass(key string, rule []string) []string {
 	return Rule_list
 }
 
-//确认规则拼写是否正确
+// 确认规则拼写是否正确
 func CheckFormat(k string) bool {
 	var Format = []string{"key", "special_letter", "year", "keyboard_walk", "common_pass", "china_name", "common_number"}
 	for _, f := range Format {
@@ -103,7 +103,7 @@ func CheckFormat(k string) bool {
 	return false
 }
 
-//确认类型，返回切片
+// 确认类型，返回切片
 func GetListByFormat(k string, key string) []string {
 	var special_letter = []string{"!", "@", "#", "$", "%", "*"}
 	var year = []string{"2015", "2016", "2017", "2018", "2019", "2020"}
@@ -140,7 +140,7 @@ func GetListByFormat(k string, key string) []string {
 
 	return list
 }
-func AddKeyboardPass(file *os.File) bool{
+func AddKeyboardPass(file *os.File) bool {
 	res := FileLoad(keyboard_pass, 1024)
 	//f ,err := os.OpenFile(commonpassFile,os.O_APPEND,0666)
 	//check(err)

@@ -38,7 +38,7 @@ func Filter_pass(password string, option *Options) bool {
 	return true
 }
 
-//参考https://www.coder.work/article/200560
+// 参考https://www.coder.work/article/200560
 func StringToInts(s string) (intSlice []int) {
 	intSlice = make([]int, len(s))
 	for i, _ := range s {
@@ -47,7 +47,7 @@ func StringToInts(s string) (intSlice []int) {
 	return
 }
 
-//参考bit4woo表哥的实现方式，采用ascii判断
+// 参考bit4woo表哥的实现方式，采用ascii判断
 func CheckSpecialChar(password string) bool {
 	pass_to_ascii := StringToInts(password)
 	for _, v := range pass_to_ascii {

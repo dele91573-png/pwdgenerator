@@ -1,6 +1,5 @@
 package gologger
 
-
 import (
 	"fmt"
 	"github.com/logrusorgru/aurora"

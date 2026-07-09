@@ -1,8 +1,8 @@
 package main
 
 import (
-	"./lib_core"
 	"pwdgenerator/gologger"
+	"pwdgenerator/lib_core"
 )
 
 const version = "0.9.1"

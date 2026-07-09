@@ -2,9 +2,9 @@ package lib_core
 
 import (
 	"flag"
-	"strings"
 	"os"
 	"pwdgenerator/gologger"
+	"strings"
 )
 
 type Options struct {
@@ -57,10 +57,10 @@ func ParseOptions() *Options {
 	}
 	if options.file_name == "" {
 		options.file_name = GetFileName(options.domain_key)
-	}else {
-		if strings.Contains(options.file_name,".txt") == false{
-			options.file_name = options.file_name+".txt"
-			gologger.Infof("%s",options.file_name)
+	} else {
+		if strings.Contains(options.file_name, ".txt") == false {
+			options.file_name = options.file_name + ".txt"
+			gologger.Infof("%s", options.file_name)
 		}
 	}
 
