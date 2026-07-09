@@ -19,6 +19,38 @@ Notes
 Files added
 - `py_pwdgenerator/` — translated modules: `options.py`, `filter.py`, `generate_pass.py`, `file_handle.py`, `utils.py`, `start.py`, `config.py`, `logger.py`.
 - `main.py` — CLI entrypoint wired to the Python `start` flow.
+- `server.py` — simple HTTP server that serves `web_ui.html` and runs the generator at `/run`.
+- `web_ui.html` — browser form for generator input.
+
+Web UI and server usage
+1. Start the server:
+
+```bash
+/home/codespace/.python/current/bin/python server.py
+```
+
+2. Open the UI in your browser:
+
+```text
+http://127.0.0.1:8000/
+```
+
+3. Or call the generator directly:
+
+```bash
+curl "http://127.0.0.1:8000/run?d=example&min=4&max=12&l=2&o=web_out.txt"
+```
+
+4. Generated output files and deduplicated results are written to `./results/`.
+
+Testing
+
+Install pytest and run:
+
+```bash
+python -m pip install pytest
+pytest
+```
 
 If you want a packaged distribution or tests, tell me which test framework you prefer and I will add them.
 # pwdgenerator
