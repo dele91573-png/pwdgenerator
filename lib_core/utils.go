@@ -23,6 +23,10 @@ func CheckDomainKey(domain_key string) bool {
 func GetPath() string {
 	//获取生成文件路径,后期改成绝对路径
 	path := "./results/"
+	if err := os.MkdirAll(path, 0755); err != nil {
+		gologger.Errorf("创建结果目录失败：%v", err)
+		os.Exit(-1)
+	}
 	return path
 }
 

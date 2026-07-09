@@ -1,0 +1,5 @@
+common_pass_file = "./dict/weak_pass_top100.txt"
+china_name_file = "./seed/Chinese_last_name_top100.txt"
+keyboard_walk_file = "./seed/4_keyboard_walk.txt"
+common_number_file = "./seed/common_number.txt"
+keyboard_pass = "./dict/weak_pass_keyboard_walk.txt"

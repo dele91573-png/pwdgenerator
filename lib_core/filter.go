@@ -41,7 +41,9 @@ func Filter_pass(password string, option *Options) bool {
 // 参考https://www.coder.work/article/200560
 func StringToInts(s string) (intSlice []int) {
 	intSlice = make([]int, len(s))
-	for i, _ := range s {
+	forfor _ = range v {...}
+ ,for _ = range v {...}
+	 _ := range s {
 		intSlice[i] = int(s[i])
 	}
 	return

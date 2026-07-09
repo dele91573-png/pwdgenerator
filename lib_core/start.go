@@ -15,7 +15,8 @@ func Start(option *Options) {
 	//print(file_path+"\n")
 	file, err := os.Create(file_path)
 	if err != nil {
-		gologger.Errorf("err=%v\n", err)
+		gologger.Errorf("创建文件失败：%v\n", err)
+		return
 	}
 	defer file.Close()
 	gologger.Infof(" 根据规则生成对应密码\n")
